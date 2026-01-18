@@ -5,123 +5,156 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <title>Evden Eve Nakliyat | Sandıkçıoğlu Nakliyat</title>
-<meta name="description" content="Geçişli, animasyonlu ve profesyonel evden eve nakliyat hizmetleri.">
+<meta name="description" content="Evden eve nakliyat hizmetlerinde profesyonel, sigortalı, asansörlü ve modern taşımacılık çözümleri.">
 
 <style>
 *{box-sizing:border-box}
 body{
 margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#0f172a;
+font-family:Segoe UI,Arial;
+background:#020617;
 color:#e5e7eb;
 overflow-x:hidden;
 }
 
-/* SLIDER */
-.slider{
+/* HERO SLIDER */
+.hero{
 position:relative;
-height:85vh;
+height:100vh;
 overflow:hidden;
 }
-.slide{
+.hero-slide{
 position:absolute;
-top:0;left:0;
-width:100%;height:100%;
+inset:0;
+background-size:cover;
+background-position:center;
+opacity:0;
+transform:scale(1.1);
+transition:1.5s;
+}
+.hero-slide.active{
+opacity:1;
+transform:scale(1);
+}
+.hero-slide::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(120deg,rgba(2,6,23,.9),rgba(30,64,175,.65));
+}
+.hero-content{
+position:absolute;
+inset:0;
 display:flex;
 align-items:center;
 justify-content:center;
 text-align:center;
-background-size:cover;
-background-position:center;
-opacity:0;
-transition:opacity 1.2s ease, transform 1.2s ease;
-transform:scale(1.1);
-}
-.slide.active{
-opacity:1;
-transform:scale(1);
-}
-.slide::after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(120deg,rgba(2,6,23,.85),rgba(30,64,175,.65));
-}
-.slide-content{
-position:relative;
 z-index:2;
-max-width:800px;
 padding:20px;
 }
-.slide h1{
-font-size:42px;
+.hero-content h1{
+font-size:46px;
 margin-bottom:15px;
 }
-.slide p{
+.hero-content p{
 font-size:20px;
-opacity:.9;
+max-width:800px;
+margin:auto;
+}
+
+/* SECTION */
+.section{
+padding:100px 20px;
+}
+.container{
+max-width:1300px;
+margin:auto;
 }
 
 /* GLASS */
 .glass{
-background:rgba(255,255,255,.08);
-backdrop-filter:blur(12px);
+background:rgba(255,255,255,.07);
+backdrop-filter:blur(14px);
 border:1px solid rgba(255,255,255,.15);
-border-radius:22px;
-padding:35px;
-box-shadow:0 20px 50px rgba(0,0,0,.4);
+border-radius:28px;
+padding:45px;
+box-shadow:0 30px 80px rgba(0,0,0,.6);
 }
 
-/* CONTENT */
-.container{
-max-width:1200px;
-margin:auto;
-padding:80px 20px;
-}
+/* GRID */
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:35px;
 }
+
+/* CARD */
 .card{
-background:linear-gradient(145deg,#111827,#020617);
-border-radius:20px;
-padding:30px;
-transition:.4s;
+background:linear-gradient(145deg,#020617,#111827);
+border-radius:24px;
+padding:35px;
 position:relative;
 overflow:hidden;
+transition:.5s;
 }
 .card::before{
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(120deg,transparent,rgba(59,130,246,.2),transparent);
+background:linear-gradient(120deg,transparent,rgba(59,130,246,.25),transparent);
 opacity:0;
-transition:.4s;
+transition:.5s;
 }
 .card:hover::before{opacity:1}
-.card:hover{transform:translateY(-10px) scale(1.02)}
-.card h2{color:#60a5fa}
+.card:hover{transform:translateY(-14px)}
+.card h3{color:#60a5fa}
 
-.btn{
-display:inline-block;
-margin-top:25px;
-background:linear-gradient(120deg,#22c55e,#16a34a);
+/* BANNER */
+.banner{
+background:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') center/cover fixed;
+padding:140px 20px;
+text-align:center;
+}
+.banner h2{font-size:40px}
+
+/* TIMELINE */
+.timeline{
+position:relative;
+padding-left:40px;
+}
+.timeline::before{
+content:"";
+position:absolute;
+left:12px;
+top:0;
+bottom:0;
+width:3px;
+background:#2563eb;
+}
+.step{
+margin-bottom:40px;
+}
+.step span{
+color:#60a5fa;
+font-weight:bold;
+}
+
+/* CTA */
+.cta{
+text-align:center;
+padding:120px 20px;
+background:linear-gradient(120deg,#16a34a,#22c55e);
 color:#022c22;
-padding:16px 32px;
+}
+.cta a{
+background:#022c22;
+color:#fff;
+padding:18px 36px;
 border-radius:40px;
 text-decoration:none;
 font-weight:bold;
-box-shadow:0 15px 40px rgba(34,197,94,.4);
+font-size:18px;
 }
-
-/* PARALLAX */
-.parallax{
-background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c') center/cover fixed;
-padding:120px 20px;
-text-align:center;
-}
-.parallax h2{font-size:38px}
 
 /* FOOTER */
 footer{
@@ -132,81 +165,107 @@ text-align:center;
 
 /* MOBILE */
 @media(max-width:768px){
-.slide h1{font-size:30px}
-.slide p{font-size:17px}
+.hero-content h1{font-size:32px}
+.hero-content p{font-size:17px}
+.banner h2{font-size:30px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- SLIDER -->
-<div class="slider">
-<div class="slide active" style="background-image:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952')">
-  <div class="slide-content glass">
-    <h1>Evden Eve Nakliyat</h1>
-    <p>Geçişli • Animasyonlu • Profesyonel Taşımacılık</p>
-  </div>
-</div>
+<!-- HERO -->
+<div class="hero">
+<div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952')"></div>
+<div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')"></div>
 
-<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')">
-  <div class="slide-content glass">
-    <h1>Sigortalı & Güvenli</h1>
-    <p>Modern araçlar, uzman ekip, maksimum koruma</p>
-  </div>
+<div class="hero-content">
+<div class="glass">
+<h1>Evden Eve Nakliyat Hizmetleri</h1>
+<p>
+Sandıkçıoğlu Nakliyat ile modern, sigortalı ve profesyonel ev taşıma çözümleri
+</p>
+</div>
 </div>
 </div>
 
-<!-- CONTENT -->
-<div class="container">
+<!-- HİZMET DETAY -->
+<div class="section">
+<div class="container glass">
+
+<h2>Evden Eve Nakliyat Nedir?</h2>
+<p>
+Evden eve nakliyat; eşyaların güvenli şekilde paketlenmesi, taşınması ve
+yeni adreste kurulmasını kapsayan profesyonel bir hizmettir.
+Sandıkçıoğlu Nakliyat bu süreci uçtan uca yönetir.
+</p>
 
 <div class="grid">
 
 <div class="card">
-<h2>Profesyonel Planlama</h2>
-<p>
-Ücretsiz ekspertiz, detaylı taşıma planı ve zaman yönetimi ile
-sorunsuz evden eve nakliyat.
-</p>
+<h3>Profesyonel Planlama</h3>
+<p>Ücretsiz ekspertiz ile taşıma öncesi detaylı planlama yapılır.</p>
 </div>
 
 <div class="card">
-<h2>Özel Ambalajlama</h2>
-<p>
-Kırılabilir, hassas ve değerli eşyalar için çok katmanlı koruma.
-</p>
+<h3>Özel Ambalajlama</h3>
+<p>Mobilya, beyaz eşya ve kırılabilir eşyalar özel malzemelerle paketlenir.</p>
 </div>
 
 <div class="card">
-<h2>Asansörlü Taşıma</h2>
-<p>
-Yüksek katlarda hızlı, güvenli ve bina dostu taşıma sistemleri.
-</p>
+<h3>Asansörlü Taşıma</h3>
+<p>Yüksek katlarda hızlı ve bina dostu taşıma sistemleri kullanılır.</p>
 </div>
 
 <div class="card">
-<h2>Sigortalı Hizmet</h2>
-<p>
-Taşıma süresince tüm eşyalarınız güvence altındadır.
-</p>
+<h3>Sigortalı Hizmet</h3>
+<p>Tüm eşyalar taşıma süresince sigorta kapsamındadır.</p>
 </div>
 
 </div>
+</div>
+</div>
 
-<div style="text-align:center;margin-top:80px">
-<a class="btn" href="https://wa.me/905XXXXXXXXX">WhatsApp’tan Teklif Al</a>
+<!-- BANNER -->
+<div class="banner">
+<div class="glass">
+<h2>Ev Taşımanın En Güvenli Yolu</h2>
+<p>Modern araç filosu • Uzman ekip • Maksimum koruma</p>
+</div>
+</div>
+
+<!-- SÜREÇ -->
+<div class="section">
+<div class="container glass">
+<h2>Evden Eve Nakliyat Sürecimiz</h2>
+
+<div class="timeline">
+<div class="step">
+<span>1. Ekspertiz</span>
+<p>Eşyalar yerinde incelenir ve plan oluşturulur.</p>
+</div>
+<div class="step">
+<span>2. Paketleme</span>
+<p>Tüm eşyalar darbelere karşı korunur.</p>
+</div>
+<div class="step">
+<span>3. Taşıma</span>
+<p>Asansörlü ve kapalı kasa araçlarla nakliye yapılır.</p>
+</div>
+<div class="step">
+<span>4. Teslimat</span>
+<p>Eşyalar yeni adrese sorunsuz şekilde yerleştirilir.</p>
+</div>
 </div>
 
 </div>
-
-<!-- PARALLAX -->
-<div class="parallax">
-<div class="glass" style="max-width:700px;margin:auto">
-<h2>Neden Sandıkçıoğlu Nakliyat?</h2>
-<p>
-Yüksek memnuniyet, güçlü referanslar ve modern taşımacılık anlayışı.
-</p>
 </div>
+
+<!-- CTA -->
+<div class="cta">
+<h2>Şimdi Teklif Alın</h2>
+<p>Evden eve nakliyat için hemen bizimle iletişime geçin</p>
+<a href="https://wa.me/905XXXXXXXXX">WhatsApp’tan Teklif Al</a>
 </div>
 
 <footer>
@@ -214,15 +273,14 @@ Yüksek memnuniyet, güçlü referanslar ve modern taşımacılık anlayışı.
 <p>© 2026 Sandıkçıoğlu Nakliyat</p>
 </footer>
 
-<!-- SLIDER SCRIPT -->
 <script>
-let slides=document.querySelectorAll('.slide');
-let index=0;
+let slides=document.querySelectorAll('.hero-slide');
+let i=0;
 setInterval(()=>{
-slides[index].classList.remove('active');
-index=(index+1)%slides.length;
-slides[index].classList.add('active');
-},4500);
+slides[i].classList.remove('active');
+i=(i+1)%slides.length;
+slides[i].classList.add('active');
+},5000);
 </script>
 
 </body>
