@@ -5,23 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sandıkçıoğlu Nakliyat | Evden Eve Nakliyat</title>
 <meta name="description" content="Sandıkçıoğlu Nakliyat evden eve, şehirler arası ve ofis taşımacılığı hizmetleri sunar.">
-<style>
-body{margin:0;font-family:Arial;background:#f5f6fa}
-header{background:#0b3c5d;color:#fff;position:sticky;top:0}
-nav{display:flex;justify-content:space-between;align-items:center;padding:15px 25px}
-nav a{color:#fff;text-decoration:none;margin-left:15px;font-weight:bold}
-.hero{background:#123f5c;color:#fff;padding:60px 20px;text-align:center}
-.hero h1{font-size:32px}
-.hero p{font-size:18px}
-.btn{background:#f39c12;color:#fff;padding:12px 22px;border-radius:30px;text-decoration:none;display:inline-block}
-section{padding:40px 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-.card{background:#fff;padding:25px;border-radius:10px;text-align:center}
-.card h3{color:#0b3c5d}
-form input,form textarea{width:100%;padding:12px;margin:8px 0;border-radius:6px;border:1px solid #ccc}
-footer{background:#0b3c5d;color:#fff;text-align:center;padding:25px}
-.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50px;text-decoration:none;font-weight:bold}
-</style>
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
@@ -29,7 +13,7 @@ footer{background:#0b3c5d;color:#fff;text-align:center;padding:25px}
 <nav>
 <strong>Sandıkçıoğlu Nakliyat</strong>
 <div>
-<a <a href="hizmetler/evden-eve-nakliyat.html">Evden Eve Nakliyat</a>
+<a href="hizmetler/evden-eve-nakliyat.html">Evden Eve Nakliyat</a>
 <a href="#teklif">Teklif Al</a>
 <a href="#iletisim">İletişim</a>
 </div>
@@ -37,43 +21,55 @@ footer{background:#0b3c5d;color:#fff;text-align:center;padding:25px}
 </header>
 
 <div class="hero">
-<h1>Evden Eve Nakliyat Hizmetleri</h1>
-<p>Güvenli • Sigortalı • Profesyonel Taşımacılık</p>
-<a class="btn" href="#teklif">Ücretsiz Teklif Al</a>
+    <div class="hero-slide active" style="background-image:url('assets/images/hero-1.jpg')"></div>
+    <div class="hero-slide" style="background-image:url('assets/images/hero-2.jpg')"></div>
+    <div class="hero-content">
+        <div class="glass">
+            <h1>Evden Eve Nakliyat Hizmetleri</h1>
+            <p>Güvenli • Sigortalı • Profesyonel Taşımacılık</p>
+            <a class="btn" href="#teklif">Ücretsiz Teklif Al</a>
+        </div>
+    </div>
 </div>
 
-<section id="hizmetler">
-<h2>Hizmetlerimiz</h2>
-<div class="grid">
-<div class="card">
-<h3>Evden Eve Nakliyat</h3>
-<p>Uzman ekip ve modern araçlarla taşımacılık.</p>
+<div class="section" id="hizmetler">
+    <div class="container glass">
+        <h2>Hizmetlerimiz</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Evden Eve Nakliyat</h3>
+                <p>Uzman ekip ve modern araçlarla taşımacılık.</p>
+            </div>
+            <div class="card">
+                <h3>Şehirler Arası Nakliyat</h3>
+                <p>Tüm Türkiye’ye güvenli taşıma.</p>
+            </div>
+            <div class="card">
+                <h3>Ofis Taşımacılığı</h3>
+                <p>Kurumsal firmalara özel çözümler.</p>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="card">
-<h3>Şehirler Arası Nakliyat</h3>
-<p>Tüm Türkiye’ye güvenli taşıma.</p>
-</div>
-<div class="card">
-<h3>Ofis Taşımacılığı</h3>
-<p>Kurumsal firmalara özel çözümler.</p>
-</div>
-</div>
-</section>
 
-<section>
-<h2>Neden Sandıkçıoğlu Nakliyat?</h2>
-<p>Yılların tecrübesi, müşteri memnuniyeti odaklı hizmet anlayışı.</p>
-</section>
+<div class="section">
+    <div class="container glass">
+        <h2>Neden Sandıkçıoğlu Nakliyat?</h2>
+        <p>Yılların tecrübesi, müşteri memnuniyeti odaklı hizmet anlayışı.</p>
+    </div>
+</div>
 
-<section id="teklif">
-<h2>Ücretsiz Teklif Al</h2>
-<form action="https://formsubmit.co/EMAIL@MAIL.COM" method="POST">
-<input type="text" name="ad" placeholder="Ad Soyad" required>
-<input type="tel" name="telefon" placeholder="Telefon" required>
-<textarea name="mesaj" placeholder="Taşınma Detayı"></textarea>
-<button class="btn" type="submit">Gönder</button>
-</form>
-</section>
+<div class="section" id="teklif">
+    <div class="container glass">
+        <h2>Ücretsiz Teklif Al</h2>
+        <form action="https://formsubmit.co/EMAIL@MAIL.COM" method="POST">
+            <input type="text" name="ad" placeholder="Ad Soyad" required>
+            <input type="tel" name="telefon" placeholder="Telefon" required>
+            <textarea name="mesaj" placeholder="Taşınma Detayı"></textarea>
+            <button class="btn" type="submit">Gönder</button>
+        </form>
+    </div>
+</div>
 
 <footer id="iletisim">
 <p>📞 05XX XXX XX XX</p>
@@ -82,6 +78,6 @@ footer{background:#0b3c5d;color:#fff;text-align:center;padding:25px}
 
 <a class="whatsapp" href="https://wa.me/905XXXXXXXXX">💬</a>
 
+<script src="assets/js/main.js"></script>
 </body>
 </html>
-
