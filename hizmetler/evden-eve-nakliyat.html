@@ -6,178 +6,26 @@
 
 <title>Evden Eve Nakliyat | Sandıkçıoğlu Nakliyat</title>
 <meta name="description" content="Evden eve nakliyat hizmetlerinde profesyonel, sigortalı, asansörlü ve modern taşımacılık çözümleri.">
-
-<style>
-*{box-sizing:border-box}
-body{
-margin:0;
-font-family:Segoe UI,Arial;
-background:#020617;
-color:#e5e7eb;
-overflow-x:hidden;
-}
-
-/* HERO SLIDER */
-.hero{
-position:relative;
-height:100vh;
-overflow:hidden;
-}
-.hero-slide{
-position:absolute;
-inset:0;
-background-size:cover;
-background-position:center;
-opacity:0;
-transform:scale(1.1);
-transition:1.5s;
-}
-.hero-slide.active{
-opacity:1;
-transform:scale(1);
-}
-.hero-slide::after{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(120deg,rgba(2,6,23,.9),rgba(30,64,175,.65));
-}
-.hero-content{
-position:absolute;
-inset:0;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-z-index:2;
-padding:20px;
-}
-.hero-content h1{
-font-size:46px;
-margin-bottom:15px;
-}
-.hero-content p{
-font-size:20px;
-max-width:800px;
-margin:auto;
-}
-
-/* SECTION */
-.section{
-padding:100px 20px;
-}
-.container{
-max-width:1300px;
-margin:auto;
-}
-
-/* GLASS */
-.glass{
-background:rgba(255,255,255,.07);
-backdrop-filter:blur(14px);
-border:1px solid rgba(255,255,255,.15);
-border-radius:28px;
-padding:45px;
-box-shadow:0 30px 80px rgba(0,0,0,.6);
-}
-
-/* GRID */
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:35px;
-}
-
-/* CARD */
-.card{
-background:linear-gradient(145deg,#020617,#111827);
-border-radius:24px;
-padding:35px;
-position:relative;
-overflow:hidden;
-transition:.5s;
-}
-.card::before{
-content:"";
-position:absolute;
-inset:0;
-background:linear-gradient(120deg,transparent,rgba(59,130,246,.25),transparent);
-opacity:0;
-transition:.5s;
-}
-.card:hover::before{opacity:1}
-.card:hover{transform:translateY(-14px)}
-.card h3{color:#60a5fa}
-
-/* BANNER */
-.banner{
-background:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952') center/cover fixed;
-padding:140px 20px;
-text-align:center;
-}
-.banner h2{font-size:40px}
-
-/* TIMELINE */
-.timeline{
-position:relative;
-padding-left:40px;
-}
-.timeline::before{
-content:"";
-position:absolute;
-left:12px;
-top:0;
-bottom:0;
-width:3px;
-background:#2563eb;
-}
-.step{
-margin-bottom:40px;
-}
-.step span{
-color:#60a5fa;
-font-weight:bold;
-}
-
-/* CTA */
-.cta{
-text-align:center;
-padding:120px 20px;
-background:linear-gradient(120deg,#16a34a,#22c55e);
-color:#022c22;
-}
-.cta a{
-background:#022c22;
-color:#fff;
-padding:18px 36px;
-border-radius:40px;
-text-decoration:none;
-font-weight:bold;
-font-size:18px;
-}
-
-/* FOOTER */
-footer{
-background:#020617;
-padding:40px;
-text-align:center;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-.hero-content h1{font-size:32px}
-.hero-content p{font-size:17px}
-.banner h2{font-size:30px}
-}
-</style>
+<link rel="stylesheet" href="../assets/css/style.css">
 </head>
 
 <body>
 
+<header>
+<nav>
+<strong>Sandıkçıoğlu Nakliyat</strong>
+<div>
+<a href="../index.html">Ana Sayfa</a>
+<a href="../index.html#teklif">Teklif Al</a>
+<a href="../index.html#iletisim">İletişim</a>
+</div>
+</nav>
+</header>
+
 <!-- HERO -->
 <div class="hero">
-<div class="hero-slide active" style="background-image:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952')"></div>
-<div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c')"></div>
+<div class="hero-slide active" style="background-image:url('../assets/images/hero-1.jpg')"></div>
+<div class="hero-slide" style="background-image:url('../assets/images/hero-2.jpg')"></div>
 
 <div class="hero-content">
 <div class="glass">
@@ -273,15 +121,6 @@ Sandıkçıoğlu Nakliyat bu süreci uçtan uca yönetir.
 <p>© 2026 Sandıkçıoğlu Nakliyat</p>
 </footer>
 
-<script>
-let slides=document.querySelectorAll('.hero-slide');
-let i=0;
-setInterval(()=>{
-slides[i].classList.remove('active');
-i=(i+1)%slides.length;
-slides[i].classList.add('active');
-},5000);
-</script>
-
+<script src="../assets/js/main.js"></script>
 </body>
 </html>
